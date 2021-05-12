@@ -1,0 +1,357 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnNovoPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 22</value>
+  </data>
+  <data name="btnNovoPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>120, 23</value>
+  </data>
+  <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+  <data name="btnNovoPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>0</value>
+  </data>
+  <data name="btnNovoPdf.Text" xml:space="preserve">
+    <value>Novo PDF</value>
+  </data>
+  <data name="&gt;&gt;btnNovoPdf.Name" xml:space="preserve">
+    <value>btnNovoPdf</value>
+  </data>
+  <data name="&gt;&gt;btnNovoPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnNovoPdf.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnNovoPdf.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btnEditPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 80</value>
+  </data>
+  <data name="btnEditPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>120, 23</value>
+  </data>
+  <data name="btnEditPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>1</value>
+  </data>
+  <data name="btnEditPdf.Text" xml:space="preserve">
+    <value>Editar PDF</value>
+  </data>
+  <data name="&gt;&gt;btnEditPdf.Name" xml:space="preserve">
+    <value>btnEditPdf</value>
+  </data>
+  <data name="&gt;&gt;btnEditPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEditPdf.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnEditPdf.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnCopiaPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>12, 51</value>
+  </data>
+  <data name="btnCopiaPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>120, 23</value>
+  </data>
+  <data name="btnCopiaPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>2</value>
+  </data>
+  <data name="btnCopiaPdf.Text" xml:space="preserve">
+    <value>Copiar PDF</value>
+  </data>
+  <data name="&gt;&gt;btnCopiaPdf.Name" xml:space="preserve">
+    <value>btnCopiaPdf</value>
+  </data>
+  <data name="&gt;&gt;btnCopiaPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCopiaPdf.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCopiaPdf.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lbKeyFormFields.ItemHeight" type="System.Int32, System.Private.CoreLib">
+    <value>15</value>
+  </data>
+  <data name="lbKeyFormFields.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>173, 12</value>
+  </data>
+  <data name="lbKeyFormFields.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>307, 424</value>
+  </data>
+  <data name="lbKeyFormFields.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lbKeyFormFields.Name" xml:space="preserve">
+    <value>lbKeyFormFields</value>
+  </data>
+  <data name="&gt;&gt;lbKeyFormFields.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbKeyFormFields.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbKeyFormFields.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbValueFormFields.ItemHeight" type="System.Int32, System.Private.CoreLib">
+    <value>15</value>
+  </data>
+  <data name="lbValueFormFields.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>510, 13</value>
+  </data>
+  <data name="lbValueFormFields.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>257, 424</value>
+  </data>
+  <data name="lbValueFormFields.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lbValueFormFields.Name" xml:space="preserve">
+    <value>lbValueFormFields</value>
+  </data>
+  <data name="&gt;&gt;lbValueFormFields.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbValueFormFields.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbValueFormFields.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnCombPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 110</value>
+  </data>
+  <data name="btnCombPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>120, 23</value>
+  </data>
+  <data name="btnCombPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>6</value>
+  </data>
+  <data name="btnCombPdf.Text" xml:space="preserve">
+    <value>Combinar PDF</value>
+  </data>
+  <data name="&gt;&gt;btnCombPdf.Name" xml:space="preserve">
+    <value>btnCombPdf</value>
+  </data>
+  <data name="&gt;&gt;btnCombPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCombPdf.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCombPdf.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnCompriPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 139</value>
+  </data>
+  <data name="btnCompriPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>119, 23</value>
+  </data>
+  <data name="btnCompriPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>7</value>
+  </data>
+  <data name="btnCompriPdf.Text" xml:space="preserve">
+    <value>Comprimir PDF</value>
+  </data>
+  <data name="&gt;&gt;btnCompriPdf.Name" xml:space="preserve">
+    <value>btnCompriPdf</value>
+  </data>
+  <data name="&gt;&gt;btnCompriPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCompriPdf.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCompriPdf.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnProtPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 169</value>
+  </data>
+  <data name="btnProtPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>119, 23</value>
+  </data>
+  <data name="btnProtPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>8</value>
+  </data>
+  <data name="btnProtPdf.Text" xml:space="preserve">
+    <value>Proteger PDF</value>
+  </data>
+  <data name="&gt;&gt;btnProtPdf.Name" xml:space="preserve">
+    <value>btnProtPdf</value>
+  </data>
+  <data name="&gt;&gt;btnProtPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnProtPdf.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnProtPdf.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnConverHtml.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 227</value>
+  </data>
+  <data name="btnConverHtml.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>119, 23</value>
+  </data>
+  <data name="btnConverHtml.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>9</value>
+  </data>
+  <data name="btnConverHtml.Text" xml:space="preserve">
+    <value>Converter HTML</value>
+  </data>
+  <data name="&gt;&gt;btnConverHtml.Name" xml:space="preserve">
+    <value>btnConverHtml</value>
+  </data>
+  <data name="&gt;&gt;btnConverHtml.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConverHtml.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnConverHtml.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnConverDoc.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 198</value>
+  </data>
+  <data name="btnConverDoc.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>119, 23</value>
+  </data>
+  <data name="btnConverDoc.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>10</value>
+  </data>
+  <data name="btnConverDoc.Text" xml:space="preserve">
+    <value>Converter Doc</value>
+  </data>
+  <data name="&gt;&gt;btnConverDoc.Name" xml:space="preserve">
+    <value>btnConverDoc</value>
+  </data>
+  <data name="&gt;&gt;btnConverDoc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConverDoc.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnConverDoc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbConverHtml.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>12, 257</value>
+  </data>
+  <data name="tbConverHtml.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>121, 23</value>
+  </data>
+  <data name="tbConverHtml.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;tbConverHtml.Name" xml:space="preserve">
+    <value>tbConverHtml</value>
+  </data>
+  <data name="&gt;&gt;tbConverHtml.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbConverHtml.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbConverHtml.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing.Primitives">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>800, 450</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="&gt;&gt;fbdCaminhoPasta.Name" xml:space="preserve">
+    <value>fbdCaminhoPasta</value>
+  </data>
+  <data name="&gt;&gt;fbdCaminhoPasta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ofdAbrirArquivo.Name" xml:space="preserve">
+    <value>ofdAbrirArquivo</value>
+  </data>
+  <data name="&gt;&gt;ofdAbrirArquivo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

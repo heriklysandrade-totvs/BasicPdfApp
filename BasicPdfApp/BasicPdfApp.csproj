@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="APTOOLKITLib">
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>5ae84488-f294-4eea-9e83-721256b4556e</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="APDocConverterLib">
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>be1ad33a-aad5-484d-8dd3-8df5736890f2</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ActivePDF.Toolkit" Version="10.3.0" />
+    <PackageReference Include="ActivePDF.Toolkit.Ultimate" Version="10.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="APDocConverter.Net46">
+      <HintPath>..\..\..\Program Files\ActivePDF\DocConverter\bin\APDocConverter.Net46.dll</HintPath>
+    </Reference>
+    <Reference Include="APToolkitNETU">
+      <HintPath>..\..\..\Program Files\ActivePDF\Toolkit Ultimate\bin\x64\APToolkitNETU.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
