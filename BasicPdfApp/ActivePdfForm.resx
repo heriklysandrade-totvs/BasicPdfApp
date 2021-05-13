@@ -81,7 +81,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnNovoPdf.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="btnEditPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>13, 80</value>
@@ -105,7 +105,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEditPdf.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="btnCopiaPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>12, 51</value>
@@ -129,7 +129,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopiaPdf.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="lbKeyFormFields.ItemHeight" type="System.Int32, System.Private.CoreLib">
     <value>15</value>
@@ -153,7 +153,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbKeyFormFields.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="lbValueFormFields.ItemHeight" type="System.Int32, System.Private.CoreLib">
     <value>15</value>
@@ -177,7 +177,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbValueFormFields.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="btnCombPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>13, 110</value>
@@ -201,7 +201,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCombPdf.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="btnCompriPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>13, 139</value>
@@ -225,7 +225,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCompriPdf.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnProtPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>13, 169</value>
@@ -249,75 +249,51 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnProtPdf.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnConverHtml.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>13, 227</value>
-  </data>
-  <data name="btnConverHtml.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>119, 23</value>
-  </data>
-  <data name="btnConverHtml.TabIndex" type="System.Int32, System.Private.CoreLib">
-    <value>9</value>
-  </data>
-  <data name="btnConverHtml.Text" xml:space="preserve">
-    <value>Converter HTML</value>
-  </data>
-  <data name="&gt;&gt;btnConverHtml.Name" xml:space="preserve">
-    <value>btnConverHtml</value>
-  </data>
-  <data name="&gt;&gt;btnConverHtml.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnConverHtml.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnConverHtml.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnConverDoc.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>13, 198</value>
+  <data name="btnConvertToPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 227</value>
   </data>
-  <data name="btnConverDoc.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+  <data name="btnConvertToPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>119, 23</value>
   </data>
-  <data name="btnConverDoc.TabIndex" type="System.Int32, System.Private.CoreLib">
-    <value>10</value>
+  <data name="btnConvertToPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>9</value>
   </data>
-  <data name="btnConverDoc.Text" xml:space="preserve">
-    <value>Converter Doc</value>
+  <data name="btnConvertToPdf.Text" xml:space="preserve">
+    <value>Converter para PDF</value>
   </data>
-  <data name="&gt;&gt;btnConverDoc.Name" xml:space="preserve">
-    <value>btnConverDoc</value>
+  <data name="&gt;&gt;btnConvertToPdf.Name" xml:space="preserve">
+    <value>btnConvertToPdf</value>
   </data>
-  <data name="&gt;&gt;btnConverDoc.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnConvertToPdf.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnConverDoc.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnConvertToPdf.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnConverDoc.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnConvertToPdf.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tbConverHtml.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+  <data name="tbConvertPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>12, 257</value>
   </data>
-  <data name="tbConverHtml.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+  <data name="tbConvertPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>121, 23</value>
   </data>
-  <data name="tbConverHtml.TabIndex" type="System.Int32, System.Private.CoreLib">
+  <data name="tbConvertPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;tbConverHtml.Name" xml:space="preserve">
-    <value>tbConverHtml</value>
+  <data name="&gt;&gt;tbConvertPdf.Name" xml:space="preserve">
+    <value>tbConvertPdf</value>
   </data>
-  <data name="&gt;&gt;tbConverHtml.Type" xml:space="preserve">
+  <data name="&gt;&gt;tbConvertPdf.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tbConverHtml.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tbConvertPdf.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;tbConverHtml.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tbConvertPdf.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
@@ -349,7 +325,7 @@
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
+    <value>ActivePdfForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

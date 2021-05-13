@@ -5,46 +5,58 @@ using System.Collections;
 using System.ComponentModel;
 using System.Linq;
 using APDocConverter;
+using System.IO;
+using DCDK.Results;
 
 namespace BasicPdfApp
 {
-  public partial class MainForm : Form
+  public partial class ActivePdfForm : Form
   {
     const float INCH = 72f;
 
-    public MainForm()
+    const string CONVERTER_DEFAULT_OUTPUT_PATH = "C:\\ProgramData\\ActivePDF\\DocConverter\\Watch Folders\\Default\\Output\\";
+
+    public ActivePdfForm()
     {
       InitializeComponent();
     }
 
     #region Auxiliares
 
-    private string GetFilePath(OpenFileDialog fileDialog)
+    private string GetFilePath(string fullFileName, bool toWatchFolder = false)
     {
-      return fileDialog.FileName.TrimEnd(fileDialog.SafeFileName.ToCharArray());
+      if (toWatchFolder)
+        return CONVERTER_DEFAULT_OUTPUT_PATH;
+      
+      return fullFileName.TrimEnd(fullFileName.Split("\\\\").Last().ToCharArray());
     }
 
     private string GetNewFileName(OpenFileDialog fileDialog, FileNameOptionEnum nameOptionEnum)
     {
+      return this.GetNewFileName(fileDialog.FileName, nameOptionEnum);
+    }
+
+    private string GetNewFileName(string fullFileName, FileNameOptionEnum nameOptionEnum, bool toWatchFolder = false)
+    {
       switch (nameOptionEnum)
       {
         case FileNameOptionEnum.Edit:
-          return this.GetFilePath(fileDialog) + $"{ofdAbrirArquivo.SafeFileName.TrimEnd(".pdf".ToCharArray())}_edit_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_edit_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Copy:
-          return this.GetFilePath(fileDialog) + $"{ofdAbrirArquivo.SafeFileName.TrimEnd(".pdf".ToCharArray())}_copy_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_copy_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Merge:
-          return this.GetFilePath(fileDialog) + $"{ofdAbrirArquivo.SafeFileName.TrimEnd(".pdf".ToCharArray())}_merge_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_merge_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Encrypt:
-          return this.GetFilePath(fileDialog) + $"{ofdAbrirArquivo.SafeFileName.TrimEnd(".pdf".ToCharArray())}_encrypt_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_encrypt_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Compress:
-          return this.GetFilePath(fileDialog) + $"{ofdAbrirArquivo.SafeFileName.TrimEnd(".pdf".ToCharArray())}_compress_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_compress_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Convert:
-          return this.GetFilePath(fileDialog) + $"{ofdAbrirArquivo.SafeFileName.TrimEnd(".pdf".ToCharArray())}_convert_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\").Last().Split('.').First()}_convert_{new Random().Next(0, 200)}.pdf";
 
         default:
           return string.Empty;
@@ -175,13 +187,51 @@ namespace BasicPdfApp
 
     private void btnConverHtml_Click(object sender, EventArgs e)
     {
-      ofdAbrirArquivo.ShowDialog();
-
       DocConverter oDC = new DocConverter();
 
-      var result = oDC.ConvertToPDF(ofdAbrirArquivo.FileName, this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Convert));
+      if (string.IsNullOrEmpty(tbConvertPdf.Text))
+      {
+        ofdAbrirArquivo.ShowDialog();
 
-      MessageBox.Show(result.DocConverterStatus.ToString());
+        var result = oDC.ConvertToPDF(ofdAbrirArquivo.FileName, GetNewFileName(ofdAbrirArquivo.FileName, FileNameOptionEnum.Convert, true));
+        
+        MessageBox.Show(result.DocConverterStatus.ToString());
+      }
+      else
+      {
+        var result = oDC.ConvertToPDF(tbConvertPdf.Text, $"convert_{tbConvertPdf.Text}.pdf");
+
+        MessageBox.Show(result.DocConverterStatus.ToString());
+      }
+
+      oDC = null;
+
+      //var byteArrayFile = Teste(ofdAbrirArquivo.FileName);
+      //MemoryStream msFile = new MemoryStream(byteArrayFile);
+
+      //var result2 = oDC.ConvertToPDF(msFile, ToPDFFunction.FromTXT, out MemoryStream msResultFile);
+      //MessageBox.Show(result.DocConverterStatus.ToString());
+
+      //if (result.DocConverterStatus != DCDK.Results.DocConverterStatus.ConversionFailed)
+      //{
+      //  File.WriteAllBytes(GetFilePath(ofdAbrirArquivo) + "\\test_convert.docx", msResultFile.ToArray());
+      //}
+    }
+
+    private byte[] Teste(string filename)
+    {
+      FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+
+      // Create a byte array of file stream length
+      byte[] bytes = File.ReadAllBytes(filename);
+
+
+      //Read block of bytes from stream into the byte array
+      fs.Read(bytes, 0, Convert.ToInt32(fs.Length));
+
+      //Close the File Stream
+      fs.Close();
+      return bytes; //return the byte data
     }
   }
 

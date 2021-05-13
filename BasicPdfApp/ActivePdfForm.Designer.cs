@@ -1,7 +1,7 @@
 ﻿
 namespace BasicPdfApp
 {
-  partial class MainForm
+  partial class ActivePdfForm
   {
     /// <summary>
     ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace BasicPdfApp
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActivePdfForm));
       this.btnNovoPdf = new System.Windows.Forms.Button();
       this.fbdCaminhoPasta = new System.Windows.Forms.FolderBrowserDialog();
       this.btnEditPdf = new System.Windows.Forms.Button();
@@ -40,9 +40,8 @@ namespace BasicPdfApp
       this.btnCombPdf = new System.Windows.Forms.Button();
       this.btnCompriPdf = new System.Windows.Forms.Button();
       this.btnProtPdf = new System.Windows.Forms.Button();
-      this.btnConverHtml = new System.Windows.Forms.Button();
-      this.btnConverDoc = new System.Windows.Forms.Button();
-      this.tbConverHtml = new System.Windows.Forms.TextBox();
+      this.btnConvertToPdf = new System.Windows.Forms.Button();
+      this.tbConvertPdf = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // btnNovoPdf
@@ -99,31 +98,24 @@ namespace BasicPdfApp
       this.btnProtPdf.UseVisualStyleBackColor = true;
       this.btnProtPdf.Click += new System.EventHandler(this.btnProtPdf_Click);
       // 
-      // btnConverHtml
+      // btnConvertToPdf
       // 
-      resources.ApplyResources(this.btnConverHtml, "btnConverHtml");
-      this.btnConverHtml.Name = "btnConverHtml";
-      this.btnConverHtml.UseVisualStyleBackColor = true;
-      this.btnConverHtml.Click += new System.EventHandler(this.btnConverHtml_Click);
+      resources.ApplyResources(this.btnConvertToPdf, "btnConvertToPdf");
+      this.btnConvertToPdf.Name = "btnConvertToPdf";
+      this.btnConvertToPdf.UseVisualStyleBackColor = true;
+      this.btnConvertToPdf.Click += new System.EventHandler(this.btnConverHtml_Click);
       // 
-      // btnConverDoc
+      // tbConvertPdf
       // 
-      resources.ApplyResources(this.btnConverDoc, "btnConverDoc");
-      this.btnConverDoc.Name = "btnConverDoc";
-      this.btnConverDoc.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.tbConvertPdf, "tbConvertPdf");
+      this.tbConvertPdf.Name = "tbConvertPdf";
       // 
-      // tbConverHtml
-      // 
-      resources.ApplyResources(this.tbConverHtml, "tbConverHtml");
-      this.tbConverHtml.Name = "tbConverHtml";
-      // 
-      // MainForm
+      // ActivePdfForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.tbConverHtml);
-      this.Controls.Add(this.btnConverDoc);
-      this.Controls.Add(this.btnConverHtml);
+      this.Controls.Add(this.tbConvertPdf);
+      this.Controls.Add(this.btnConvertToPdf);
       this.Controls.Add(this.btnProtPdf);
       this.Controls.Add(this.btnCompriPdf);
       this.Controls.Add(this.btnCombPdf);
@@ -132,7 +124,7 @@ namespace BasicPdfApp
       this.Controls.Add(this.btnCopiaPdf);
       this.Controls.Add(this.btnEditPdf);
       this.Controls.Add(this.btnNovoPdf);
-      this.Name = "MainForm";
+      this.Name = "ActivePdfForm";
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -150,9 +142,8 @@ namespace BasicPdfApp
     private System.Windows.Forms.Button btnCombPdf;
     private System.Windows.Forms.Button btnCompriPdf;
     private System.Windows.Forms.Button btnProtPdf;
-    private System.Windows.Forms.Button btnConverHtml;
-    private System.Windows.Forms.Button btnConverDoc;
-    private System.Windows.Forms.TextBox tbConverHtml;
+    private System.Windows.Forms.Button btnConvertToPdf;
+    private System.Windows.Forms.TextBox tbConvertPdf;
   }
 }
 
