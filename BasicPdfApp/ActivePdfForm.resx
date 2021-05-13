@@ -59,7 +59,7 @@
   </resheader>
   <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnNovoPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>13, 22</value>
+    <value>12, 46</value>
   </data>
   <data name="btnNovoPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>120, 23</value>
@@ -81,10 +81,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnNovoPdf.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
+  </data>
+  <data name="btnEditPdf.Enabled" type="System.Boolean, System.Private.CoreLib">
+    <value>False</value>
   </data>
   <data name="btnEditPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>13, 80</value>
+    <value>12, 104</value>
   </data>
   <data name="btnEditPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>120, 23</value>
@@ -105,10 +108,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEditPdf.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <data name="ofdAbrirArquivo.Filter" xml:space="preserve">
+    <value>Arquivos PDF|*.pdf</value>
   </data>
   <data name="btnCopiaPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>12, 51</value>
+    <value>11, 75</value>
   </data>
   <data name="btnCopiaPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>120, 23</value>
@@ -129,16 +135,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopiaPdf.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lbKeyFormFields.ItemHeight" type="System.Int32, System.Private.CoreLib">
     <value>15</value>
   </data>
   <data name="lbKeyFormFields.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>173, 12</value>
+    <value>240, 12</value>
   </data>
   <data name="lbKeyFormFields.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>307, 424</value>
+    <value>249, 424</value>
   </data>
   <data name="lbKeyFormFields.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>4</value>
@@ -153,7 +159,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbKeyFormFields.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lbValueFormFields.ItemHeight" type="System.Int32, System.Private.CoreLib">
     <value>15</value>
@@ -177,10 +183,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbValueFormFields.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnCombPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>13, 110</value>
+    <value>12, 134</value>
   </data>
   <data name="btnCombPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>120, 23</value>
@@ -201,10 +207,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCombPdf.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnCompriPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>13, 139</value>
+    <value>12, 163</value>
   </data>
   <data name="btnCompriPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>119, 23</value>
@@ -225,10 +231,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCompriPdf.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnProtPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>13, 169</value>
+    <value>12, 193</value>
   </data>
   <data name="btnProtPdf.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>119, 23</value>
@@ -249,7 +255,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnProtPdf.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnConvertToPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>13, 227</value>
@@ -273,7 +279,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnConvertToPdf.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="tbConvertPdf.Enabled" type="System.Boolean, System.Private.CoreLib">
+    <value>False</value>
   </data>
   <data name="tbConvertPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>12, 257</value>
@@ -283,6 +292,9 @@
   </data>
   <data name="tbConvertPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>11</value>
+  </data>
+  <data name="tbConvertPdf.Text" xml:space="preserve">
+    <value>Testes..</value>
   </data>
   <data name="&gt;&gt;tbConvertPdf.Name" xml:space="preserve">
     <value>tbConvertPdf</value>
@@ -294,6 +306,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbConvertPdf.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkGerarWatchFolder.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="chkGerarWatchFolder.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 13</value>
+  </data>
+  <data name="chkGerarWatchFolder.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>208, 19</value>
+  </data>
+  <data name="chkGerarWatchFolder.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>12</value>
+  </data>
+  <data name="chkGerarWatchFolder.Text" xml:space="preserve">
+    <value>Gerar em "Watch Folder/ OutPut"?</value>
+  </data>
+  <data name="&gt;&gt;chkGerarWatchFolder.Name" xml:space="preserve">
+    <value>chkGerarWatchFolder</value>
+  </data>
+  <data name="&gt;&gt;chkGerarWatchFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGerarWatchFolder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chkGerarWatchFolder.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">

@@ -6,7 +6,6 @@ using System.ComponentModel;
 using System.Linq;
 using APDocConverter;
 using System.IO;
-using DCDK.Results;
 
 namespace BasicPdfApp
 {
@@ -23,9 +22,9 @@ namespace BasicPdfApp
 
     #region Auxiliares
 
-    private string GetFilePath(string fullFileName, bool toWatchFolder = false)
+    private string GetFilePath(string fullFileName)
     {
-      if (toWatchFolder)
+      if (chkGerarWatchFolder.Checked)
         return CONVERTER_DEFAULT_OUTPUT_PATH;
       
       return fullFileName.TrimEnd(fullFileName.Split("\\\\").Last().ToCharArray());
@@ -36,27 +35,27 @@ namespace BasicPdfApp
       return this.GetNewFileName(fileDialog.FileName, nameOptionEnum);
     }
 
-    private string GetNewFileName(string fullFileName, FileNameOptionEnum nameOptionEnum, bool toWatchFolder = false)
+    private string GetNewFileName(string fullFileName, FileNameOptionEnum nameOptionEnum)
     {
       switch (nameOptionEnum)
       {
         case FileNameOptionEnum.Edit:
-          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_edit_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName) + $"{fullFileName.Split("\\").Last().TrimEnd(".pdf".ToCharArray())}_edit_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Copy:
-          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_copy_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName) + $"{fullFileName.Split("\\").Last().TrimEnd(".pdf".ToCharArray())}_copy_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Merge:
-          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_merge_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName) + $"{fullFileName.Split("\\").Last().TrimEnd(".pdf".ToCharArray())}_merge_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Encrypt:
-          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_encrypt_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName) + $"{fullFileName.Split("\\").Last().TrimEnd(".pdf".ToCharArray())}_encrypt_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Compress:
-          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\\\").Last().TrimEnd(".pdf".ToCharArray())}_compress_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName) + $"{fullFileName.Split("\\").Last().TrimEnd(".pdf".ToCharArray())}_compress_{new Random().Next(0, 200)}.pdf";
 
         case FileNameOptionEnum.Convert:
-          return this.GetFilePath(fullFileName, toWatchFolder) + $"{fullFileName.Split("\\").Last().Split('.').First()}_convert_{new Random().Next(0, 200)}.pdf";
+          return this.GetFilePath(fullFileName) + $"{fullFileName.Split("\\").Last().Split('.').First()}_convert_{new Random().Next(0, 200)}.pdf";
 
         default:
           return string.Empty;
@@ -74,10 +73,12 @@ namespace BasicPdfApp
         OutputPageWidth = 8.5f * INCH
       })
       {
+        if (!chkGerarWatchFolder.Checked)
+          fbdCaminhoPasta.ShowDialog();
 
-        fbdCaminhoPasta.ShowDialog();
+        var caminhoDestino = chkGerarWatchFolder.Checked ? CONVERTER_DEFAULT_OUTPUT_PATH : fbdCaminhoPasta.SelectedPath;
 
-        int intOpenOutputFile = oTK.OpenOutputFile(fbdCaminhoPasta.SelectedPath + "\\new.pdf");
+        oTK.OpenOutputFile(caminhoDestino + $"\\new_{new Random().Next(0, 200)}.pdf");
 
         // Each time a new page is required call NewPage
         oTK.NewPage();
@@ -89,113 +90,132 @@ namespace BasicPdfApp
         oTK.PrintText(INCH, 10f * INCH, $"Hello! Version {tkVer}");
         oTK.PrintText(INCH, 9.5f * INCH, $"Date: {DateTime.Now}");
 
-        oTK.PrintJPEG(fbdCaminhoPasta.SelectedPath + "\\autotest.jpg", INCH, 8 * INCH, 110.0f, 107.0f, true);
+        oTK.PrintJPEG(caminhoDestino + "\\autotest.jpg", INCH, 8 * INCH, 110.0f, 107.0f, true);
         oTK.CloseOutputFile();
       }
     }
 
     private void btnCopiaPdf_Click(object sender, EventArgs e)
     {
-      ofdAbrirArquivo.ShowDialog();
-
-      using (Toolkit oTK = new Toolkit())
+      if (ofdAbrirArquivo.ShowDialog() == DialogResult.OK)
       {
-        oTK.OpenOutputFile(this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Copy));
-        oTK.OpenInputFile(ofdAbrirArquivo.FileName);
+        using (Toolkit oTK = new Toolkit())
+        {
+          oTK.OpenOutputFile(this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Copy));
+          oTK.OpenInputFile(ofdAbrirArquivo.FileName);
 
-        oTK.CopyForm(0, 0);
-        oTK.CloseOutputFile();
+          oTK.CopyForm(0, 0);
+          oTK.CloseOutputFile();
+        }
       }
     }
 
+    //Funções básicas OK
+    //Necessita mais testes para validar o preenchimento de campos de 'Formulário'
     private void btnEditPdf_Click(object sender, EventArgs e)
     {
-      ofdAbrirArquivo.ShowDialog();
-
-      using (Toolkit oTK = new Toolkit())
+      if (ofdAbrirArquivo.ShowDialog() == DialogResult.OK)
       {
-        oTK.OpenOutputFile(this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Edit));
-        oTK.OpenInputFile(ofdAbrirArquivo.FileName);
-
-        BindingList<object> blFormFieldValues = new BindingList<object>();
-
-        foreach (DictionaryEntry item in oTK.GetInputFields())
+        using (Toolkit oTK = new Toolkit())
         {
-          lbKeyFormFields.Items.Add(item.Key);
-          blFormFieldValues.Add(item.Value);
+          oTK.OpenOutputFile(this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Edit));
+          oTK.OpenInputFile(ofdAbrirArquivo.FileName);
+
+          BindingList<object> blFormFieldValues = new BindingList<object>();
+
+          foreach (DictionaryEntry item in oTK.GetInputFields())
+          {
+            lbKeyFormFields.Items.Add(item.Key);
+            blFormFieldValues.Add(item.Value);
+          }
+
+          oTK.DoFormFormatting = 1;
+          oTK.FormNumbering = 1;
+          oTK.SetFormFieldData("topmostSubform[0].Page1[0].f1_1[0]", "Jeremy Likness", 1);
+          //oTK.SetFormFieldData("topmostSubform[0].Page1[0].Address[0].f1_7[0]", "28202 Cabot Rd Ste 155", 1);
+          //oTK.SetFormFieldData("topmostSubform[0].Page1[0].Address[0].f1_8[0]", "Laguna Niguel, CA 92677", 1);
+
+          oTK.CopyForm(0, 0);
+
+          blFormFieldValues.ToList().ForEach(x => lbValueFormFields.Items.Add(x));
+
+          oTK.CloseOutputFile();
         }
-
-        oTK.DoFormFormatting = 1;
-        oTK.FormNumbering = 1;
-        oTK.SetFormFieldData("topmostSubform[0].Page1[0].f1_1[0]", "Jeremy Likness", 1);
-        //oTK.SetFormFieldData("topmostSubform[0].Page1[0].Address[0].f1_7[0]", "28202 Cabot Rd Ste 155", 1);
-        //oTK.SetFormFieldData("topmostSubform[0].Page1[0].Address[0].f1_8[0]", "Laguna Niguel, CA 92677", 1);
-
-        oTK.CopyForm(0, 0);
-
-        blFormFieldValues.ToList().ForEach(x => lbValueFormFields.Items.Add(x));
-
-        oTK.CloseOutputFile();
       }
     }
 
     private void btnCombPdf_Click(object sender, EventArgs e)
     {
-      fbdCaminhoPasta.ShowDialog();
+      MessageBox.Show("Selecione os arquivos a serem combinados");
 
-      using (Toolkit oTK = new Toolkit())
+      ofdAbrirArquivo.Multiselect = true;
+
+      if (ofdAbrirArquivo.ShowDialog() == DialogResult.OK)
       {
-        oTK.OpenOutputFile(fbdCaminhoPasta.SelectedPath + "\\teste_merge.pdf");
-        oTK.MergeFile(fbdCaminhoPasta.SelectedPath + "\\new.pdf", 0, 0);
-        oTK.MergeFile(fbdCaminhoPasta.SelectedPath + "\\fw9.pdf", 0, 0);
-        oTK.MergeFile(fbdCaminhoPasta.SelectedPath + "\\CertificadoCODEC.pdf", 0, 0);
-        oTK.CloseOutputFile();
+        using (Toolkit oTK = new Toolkit())
+        {
+          var mergedFileName = GetFilePath(ofdAbrirArquivo.FileNames[0]) + String.Join('_', ofdAbrirArquivo.SafeFileNames.Select(x => x.TrimEnd(".pdf".ToCharArray())));
+          oTK.OpenOutputFile(GetNewFileName(mergedFileName, FileNameOptionEnum.Merge));
+
+          foreach (var item in ofdAbrirArquivo.FileNames)
+          {
+            oTK.MergeFile(item, 0, 0);
+          }
+
+          oTK.CloseOutputFile();
+        }
       }
     }
 
     private void btnProtPdf_Click(object sender, EventArgs e)
     {
-      ofdAbrirArquivo.ShowDialog();
-
-      using (Toolkit oTK = new Toolkit())
+      if (ofdAbrirArquivo.ShowDialog() == DialogResult.OK)
       {
-        oTK.EncryptPDF(5, ofdAbrirArquivo.FileName, this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Encrypt), "senhateste", "senhateste", false, false, false, false);
+        using (Toolkit oTK = new Toolkit())
+        {
+          oTK.EncryptPDF(5, ofdAbrirArquivo.FileName, this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Encrypt), "senhateste", "senhateste", false, false, false, false);
+        }
       }
     }
 
     private void btnCompriPdf_Click(object sender, EventArgs e)
     {
-      ofdAbrirArquivo.ShowDialog();
-
-      using (Toolkit oTK = new Toolkit())
+      if (ofdAbrirArquivo.ShowDialog() == DialogResult.OK)
       {
-        oTK.OpenInputFile(ofdAbrirArquivo.FileName);
-        
-        var compressor = oTK.GetCompressor();
-        compressor.CompressImages = true;
-        compressor.CompressObjects = true;
-        compressor.CompressionQuality = 20;
-        compressor.Activate();
+        using (Toolkit oTK = new Toolkit())
+        {
+          oTK.OpenInputFile(ofdAbrirArquivo.FileName);
 
-        oTK.OpenOutputFile(this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Compress));
+          var compressor = oTK.GetCompressor();
+          compressor.CompressImages = true;
+          compressor.CompressObjects = true;
+          compressor.CompressionQuality = 20;
+          compressor.Activate();
 
-        oTK.CopyForm(0, 0);
+          oTK.OpenOutputFile(this.GetNewFileName(ofdAbrirArquivo, FileNameOptionEnum.Compress));
 
-        oTK.CloseOutputFile();
+          oTK.CopyForm(0, 0);
+
+          oTK.CloseOutputFile();
+        }
       }
     }
 
-    private void btnConverHtml_Click(object sender, EventArgs e)
+    private void btnConvertToPdf_Click(object sender, EventArgs e)
     {
+      ofdAbrirArquivo.Multiselect = false;
+      ofdAbrirArquivo.Filter = string.Empty;
+
       DocConverter oDC = new DocConverter();
 
       if (string.IsNullOrEmpty(tbConvertPdf.Text))
       {
-        ofdAbrirArquivo.ShowDialog();
+        if (ofdAbrirArquivo.ShowDialog() == DialogResult.OK)
+        {
+          var result = oDC.ConvertToPDF(ofdAbrirArquivo.FileName, GetNewFileName(ofdAbrirArquivo.FileName, FileNameOptionEnum.Convert));
 
-        var result = oDC.ConvertToPDF(ofdAbrirArquivo.FileName, GetNewFileName(ofdAbrirArquivo.FileName, FileNameOptionEnum.Convert, true));
-        
-        MessageBox.Show(result.DocConverterStatus.ToString());
+          MessageBox.Show(result.DocConverterStatus.ToString());
+        }
       }
       else
       {

@@ -42,6 +42,7 @@ namespace BasicPdfApp
       this.btnProtPdf = new System.Windows.Forms.Button();
       this.btnConvertToPdf = new System.Windows.Forms.Button();
       this.tbConvertPdf = new System.Windows.Forms.TextBox();
+      this.chkGerarWatchFolder = new System.Windows.Forms.CheckBox();
       this.SuspendLayout();
       // 
       // btnNovoPdf
@@ -57,6 +58,10 @@ namespace BasicPdfApp
       this.btnEditPdf.Name = "btnEditPdf";
       this.btnEditPdf.UseVisualStyleBackColor = true;
       this.btnEditPdf.Click += new System.EventHandler(this.btnEditPdf_Click);
+      // 
+      // ofdAbrirArquivo
+      // 
+      resources.ApplyResources(this.ofdAbrirArquivo, "ofdAbrirArquivo");
       // 
       // btnCopiaPdf
       // 
@@ -103,17 +108,26 @@ namespace BasicPdfApp
       resources.ApplyResources(this.btnConvertToPdf, "btnConvertToPdf");
       this.btnConvertToPdf.Name = "btnConvertToPdf";
       this.btnConvertToPdf.UseVisualStyleBackColor = true;
-      this.btnConvertToPdf.Click += new System.EventHandler(this.btnConverHtml_Click);
+      this.btnConvertToPdf.Click += new System.EventHandler(this.btnConvertToPdf_Click);
       // 
       // tbConvertPdf
       // 
       resources.ApplyResources(this.tbConvertPdf, "tbConvertPdf");
       this.tbConvertPdf.Name = "tbConvertPdf";
       // 
+      // chkGerarWatchFolder
+      // 
+      resources.ApplyResources(this.chkGerarWatchFolder, "chkGerarWatchFolder");
+      this.chkGerarWatchFolder.Checked = true;
+      this.chkGerarWatchFolder.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chkGerarWatchFolder.Name = "chkGerarWatchFolder";
+      this.chkGerarWatchFolder.UseVisualStyleBackColor = true;
+      // 
       // ActivePdfForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.chkGerarWatchFolder);
       this.Controls.Add(this.tbConvertPdf);
       this.Controls.Add(this.btnConvertToPdf);
       this.Controls.Add(this.btnProtPdf);
@@ -144,6 +158,7 @@ namespace BasicPdfApp
     private System.Windows.Forms.Button btnProtPdf;
     private System.Windows.Forms.Button btnConvertToPdf;
     private System.Windows.Forms.TextBox tbConvertPdf;
+    private System.Windows.Forms.CheckBox chkGerarWatchFolder;
   }
 }
 
