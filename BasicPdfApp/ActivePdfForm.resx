@@ -293,9 +293,6 @@
   <data name="tbConvertPdf.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>11</value>
   </data>
-  <data name="tbConvertPdf.Text" xml:space="preserve">
-    <value>Testes..</value>
-  </data>
   <data name="&gt;&gt;tbConvertPdf.Name" xml:space="preserve">
     <value>tbConvertPdf</value>
   </data>
