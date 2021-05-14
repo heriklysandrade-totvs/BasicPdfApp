@@ -154,7 +154,7 @@ namespace BasicPdfApp
       {
         using (Toolkit oTK = new Toolkit())
         {
-          var mergedFileName = GetFilePath(ofdAbrirArquivo.FileNames[0]) + String.Join('_', ofdAbrirArquivo.SafeFileNames.Select(x => x.TrimEnd(".pdf".ToCharArray())));
+          var mergedFileName = GetFilePath(ofdAbrirArquivo.FileNames[0]) + string.Join('_', ofdAbrirArquivo.SafeFileNames.Select(x => x.TrimEnd(".pdf".ToCharArray())));
           oTK.OpenOutputFile(GetNewFileName(mergedFileName, FileNameOptionEnum.Merge));
 
           foreach (var item in ofdAbrirArquivo.FileNames)
