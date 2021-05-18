@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +22,7 @@
   <ItemGroup>
     <PackageReference Include="ActivePDF.Toolkit" Version="10.3.0" />
     <PackageReference Include="ActivePDF.Toolkit.Ultimate" Version="10.3.0" />
+    <PackageReference Include="PDFTron.NETCore.Windows.x64" Version="9.0.0.77616" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +32,12 @@
     <Reference Include="APToolkitNETU">
       <HintPath>..\..\..\Program Files\ActivePDF\Toolkit Ultimate\bin\x64\APToolkitNETU.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Base\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
