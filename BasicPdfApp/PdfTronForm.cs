@@ -13,9 +13,11 @@ namespace BasicPdfApp
         public PdfTronForm()
         {
             InitializeComponent();
-            
+
+            PDFNetLoader loader = PDFNetLoader.Instance();
             PDFNet.SetTempPath("C:\\ProgramData\\ActivePDF\\DocConverter\\Watch Folders\\Default\\Temp");
             PDFNet.Initialize();
+            HTML2PDF.SetModulePath(Environment.CurrentDirectory + "\\html2pdf.dll");
         }
 
         private void btnNovoPdf_Click(object sender, System.EventArgs e)
@@ -143,7 +145,7 @@ namespace BasicPdfApp
             {
                 using (PDFDoc doc = new PDFDoc(ofdAbrirArquivo.FileName))
                 {
-                    // Apply a new security handler with given security settings.
+                    //Apply a new security handler with given security settings.
                     // In order to open saved PDF you will need a user password 'test'.
                     SecurityHandler new_handler = new SecurityHandler(SecurityHandler.AlgorithmType.e_AES_256);
 
@@ -175,35 +177,46 @@ namespace BasicPdfApp
                 {
                     using (PDFDoc doc = new PDFDoc())
                     {
-                        switch (GetFileType(ofdAbrirArquivo.FileName))
+                        try
                         {
-                            case FileType.MSOffice:
-                                pdftron.PDF.Convert.OfficeToPDF(doc, ofdAbrirArquivo.FileName, null);
-                                break;
+                            switch (GetFileType(ofdAbrirArquivo.FileName))
+                            {
+                                case FileType.MSOffice:
+                                    pdftron.PDF.Convert.OfficeToPDF(doc, ofdAbrirArquivo.FileName, null);
+                                    break;
 
-                            case FileType.HTML:
-                                HTML2PDF converter = new HTML2PDF();
+                                case FileType.HTML:
+                                    HTML2PDF converter = new HTML2PDF();
 
-                                var htmlString = System.IO.File.ReadAllText(ofdAbrirArquivo.FileName);
+                                    var htmlString = System.IO.File.ReadAllText(ofdAbrirArquivo.FileName);
 
-                                converter.InsertFromHtmlString(htmlString);
+                                    converter.InsertFromHtmlString(htmlString);
 
-                                converter.Convert(doc);
-                                break;
+                                    converter.Convert(doc);
+                                    break;
 
-                            case FileType.Other:
-                                pdftron.PDF.Convert.ToPdf(doc, ofdAbrirArquivo.FileName);
-                                break;
+                                case FileType.Other:
+                                    pdftron.PDF.Convert.ToPdf(doc, ofdAbrirArquivo.FileName);
+                                    break;
 
-                            case FileType.NotMapped:
-                                MessageBox.Show($"Extensão {GetFileExtension(ofdAbrirArquivo.FileName)} não mapeada");
-                                return;
+                                case FileType.NotMapped:
+                                    MessageBox.Show($"Extensão {GetFileExtension(ofdAbrirArquivo.FileName)} não mapeada");
+                                    return;
 
-                            default:
-                                break;
+                                default:
+                                    break;
+                            }
+
+                            doc.Save(GetNewFileName(ofdAbrirArquivo.FileName, FileNameOptionEnum.Convert), SDFDoc.SaveOptions.e_linearized);
                         }
-
-                        doc.Save(GetNewFileName(ofdAbrirArquivo.FileName, FileNameOptionEnum.Convert), SDFDoc.SaveOptions.e_linearized);
+                        catch (PDFNetException ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                 }
             }

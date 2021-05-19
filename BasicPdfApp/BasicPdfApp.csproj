@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <COMReference Include="APTOOLKITLib">
       <VersionMinor>0</VersionMinor>
       <VersionMajor>1</VersionMajor>
@@ -28,9 +34,11 @@
   <ItemGroup>
     <Reference Include="APDocConverter.Net46">
       <HintPath>..\..\..\Program Files\ActivePDF\DocConverter\bin\APDocConverter.Net46.dll</HintPath>
+      <Private>true</Private>
     </Reference>
     <Reference Include="APToolkitNETU">
       <HintPath>..\..\..\Program Files\ActivePDF\Toolkit Ultimate\bin\x64\APToolkitNETU.dll</HintPath>
+      <Private>true</Private>
     </Reference>
   </ItemGroup>
 
@@ -39,5 +47,21 @@
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ExternalLibraries\html2pdf.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\heriklys.andrade\.nuget\packages\pdftron.netcore.windows.x64\9.0.0.77616\build\\x64\PDFNetC.dll" Link="ExternalLibraries\PDFNetC.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(SolutionDir)\BasicPdfApp\ExternalLibraries\html2pdf.dll&quot; &quot;$(TargetDir)\html2pdf.dll&quot;&#xD;&#xA;copy &quot;$(SolutionDir)\BasicPdfApp\ExternalLibraries\html2pdf.dll&quot; &quot;C:\WorkspaceC#\BasicPdfApp\BasicPdfApp\bin\Release\netcoreapp3.1\publish&quot;" />
+  </Target>
 
 </Project>
