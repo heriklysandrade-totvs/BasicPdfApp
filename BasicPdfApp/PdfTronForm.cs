@@ -28,19 +28,26 @@ namespace BasicPdfApp
             {
                 using (PDFDoc doc = new PDFDoc())
                 {
-                    doc.InitSecurityHandler();
+                    using (Stamper s = new Stamper(Stamper.SizeType.e_relative_scale, 0.5, 0.5))
+                    {
+                        var randomNumber = new Random().Next(0, System.Convert.ToInt32(tbxNumMaxArquivos.Text));
+                        doc.InitSecurityHandler();
 
-                    // An example of creating a new page and adding it to
-                    // doc's sequence of pages
-                    Page newPg = doc.PageCreate();
-                    doc.PagePushBack(newPg);
+                        // An example of creating a new page and adding it to
+                        // doc's sequence of pages
+                        Page newPg = doc.PageCreate();
+                        doc.PagePushBack(newPg);
 
-                    var caminhoDestino = chkGerarWatchFolder.Checked ? CONVERTER_DEFAULT_OUTPUT_PATH : fbdCaminhoPasta.SelectedPath;
+                        s.SetAlignment(Stamper.HorizontalAlignment.e_horizontal_center, Stamper.VerticalAlignment.e_vertical_center);
+                        s.SetFontColor(new ColorPt(1, 0, 0)); // set text color to red 
+                        s.StampText(doc, $"{tbxDefaultNewName.Text} document {randomNumber}", new PageSet(1, doc.GetPageCount()));
 
-                    // Save as a linearized file which is most popular 
-                    // and effective format for quick PDF Viewing.
-                    doc.Save(caminhoDestino + $"\\new{new Random().Next(0, 200)}.pdf", SDFDoc.SaveOptions.e_linearized);
+                        var caminhoDestino = chkGerarWatchFolder.Checked ? CONVERTER_DEFAULT_OUTPUT_PATH : fbdCaminhoPasta.SelectedPath;
 
+                        // Save as a linearized file which is most popular 
+                        // and effective format for quick PDF Viewing.
+                        doc.Save(caminhoDestino + $"\\{tbxDefaultNewName.Text}_{randomNumber}.pdf", SDFDoc.SaveOptions.e_linearized);
+                    }
                 }
             }
             catch (PDFNetException ex)

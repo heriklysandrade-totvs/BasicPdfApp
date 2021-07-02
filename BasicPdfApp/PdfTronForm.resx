@@ -57,6 +57,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnNovoPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>12, 65</value>
+  </data>
   <data name="&gt;&gt;btnNovoPdf.Name" xml:space="preserve">
     <value>btnNovoPdf</value>
   </data>
@@ -67,7 +71,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnNovoPdf.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
+  </data>
+  <data name="btnEditPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>12, 123</value>
   </data>
   <data name="&gt;&gt;btnEditPdf.Name" xml:space="preserve">
     <value>btnEditPdf</value>
@@ -79,7 +86,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEditPdf.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
+  </data>
+  <data name="btnCopiaPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>11, 94</value>
   </data>
   <data name="&gt;&gt;btnCopiaPdf.Name" xml:space="preserve">
     <value>btnCopiaPdf</value>
@@ -91,7 +101,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopiaPdf.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
+  </data>
+  <data name="btnCombPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>12, 153</value>
   </data>
   <data name="&gt;&gt;btnCombPdf.Name" xml:space="preserve">
     <value>btnCombPdf</value>
@@ -103,7 +116,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCombPdf.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
+  </data>
+  <data name="btnCompriPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>12, 182</value>
   </data>
   <data name="&gt;&gt;btnCompriPdf.Name" xml:space="preserve">
     <value>btnCompriPdf</value>
@@ -115,7 +131,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCompriPdf.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
+  </data>
+  <data name="btnProtPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>12, 212</value>
   </data>
   <data name="&gt;&gt;btnProtPdf.Name" xml:space="preserve">
     <value>btnProtPdf</value>
@@ -127,7 +146,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnProtPdf.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
+  </data>
+  <data name="btnConvertToPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>13, 246</value>
   </data>
   <data name="&gt;&gt;btnConvertToPdf.Name" xml:space="preserve">
     <value>btnConvertToPdf</value>
@@ -139,11 +161,14 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnConvertToPdf.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
   <data name="tbConvertPdf.Enabled" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
+  </data>
+  <data name="tbConvertPdf.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>12, 276</value>
   </data>
   <data name="&gt;&gt;tbConvertPdf.Name" xml:space="preserve">
     <value>tbConvertPdf</value>
@@ -155,7 +180,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbConvertPdf.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;chkGerarWatchFolder.Name" xml:space="preserve">
     <value>chkGerarWatchFolder</value>
@@ -167,12 +192,113 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chkGerarWatchFolder.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbxDefaultNewName.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>148, 65</value>
+  </data>
+  <data name="tbxDefaultNewName.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>125, 23</value>
+  </data>
+  <data name="tbxDefaultNewName.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>13</value>
+  </data>
+  <data name="tbxDefaultNewName.Text" xml:space="preserve">
+    <value>new</value>
+  </data>
+  <data name="&gt;&gt;tbxDefaultNewName.Name" xml:space="preserve">
+    <value>tbxDefaultNewName</value>
+  </data>
+  <data name="&gt;&gt;tbxDefaultNewName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxDefaultNewName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbxDefaultNewName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>148, 44</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>125, 15</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>14</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Nome Arquivo padrão</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbxNumMaxArquivos.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>319, 64</value>
+  </data>
+  <data name="tbxNumMaxArquivos.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>100, 23</value>
+  </data>
+  <data name="tbxNumMaxArquivos.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>15</value>
+  </data>
+  <data name="tbxNumMaxArquivos.Text" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="&gt;&gt;tbxNumMaxArquivos.Name" xml:space="preserve">
+    <value>tbxNumMaxArquivos</value>
+  </data>
+  <data name="&gt;&gt;tbxNumMaxArquivos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxNumMaxArquivos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbxNumMaxArquivos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>319, 43</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>115, 15</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>16</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Nº Máximo arquivos</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing.Primitives">
     <value>7, 15</value>
   </data>
